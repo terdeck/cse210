@@ -3,12 +3,16 @@ using System;
 public class PromptGenerator
 {
     // public List<Prompt> _prompts = new List<Prompt>();
-    // public List<string> _prompts;
     public List<string> _prompts = new List<string>();
     
     public string GetRandomPrompt()
     {
-        return "";
+        // return "";
+        foreach (string prompt in _prompts)
+        {
+            // prompt.Display();
+            Console.WriteLine(prompt);
+        }
     }
 
     // list of prompts:
