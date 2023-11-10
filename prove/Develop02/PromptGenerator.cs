@@ -7,12 +7,16 @@ public class PromptGenerator
     
     public string GetRandomPrompt()
     {
-        // return "";
-        foreach (string prompt in _prompts)
-        {
-            // prompt.Display();
-            Console.WriteLine(prompt);
-        }
+        Random randomGenerate = new Random();
+        int randomNum = randomGenerate.Next(1, 6);
+
+        string getPrompt = _prompts[randomNum];
+
+        // foreach (string prompt in _prompts)
+        // {
+        //     // prompt.Display();
+        // Console.WriteLine(getPrompt);
+        return getPrompt;
     }
 
     // list of prompts:

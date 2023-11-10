@@ -12,21 +12,17 @@ class Program
         
         DisplayMenu();
 
-        string prompt1 = new string();
-        // PromptGenerator prompt1 = new PromptGenerator();
-        prompt1._prompts = "What memory are you grateful for?";
+        // string prompt1 = new string();
+        PromptGenerator prompt1 = new PromptGenerator();
+        prompt1._prompts.Add("What memory are you grateful for?");
+        prompt1._prompts.Add("What opportunities are you grateful for?");
+        prompt1._prompts.Add("What is something a friend of family member did today that made you thankful for them?");
+        prompt1._prompts.Add("What is the biggest gift in your life right now?");
+        prompt1._prompts.Add("What talents and abilities are you most grateful for?");
 
-        string prompt2 = new string();
-        prompt2._prompts = "What opportunities are you grateful for?";
-
-        string prompt3 = new string();
-        prompt3._prompts = "What is something a friend of family member did today that made you thankful for them?";
-        
-        string prompt4 = new string();
-        prompt4._prompts = "What is the biggest gift in your life right now?";
-
-        string prompt5 = new string();
-        prompt5._prompts = "What talents and abilities are you most grateful for?";
+        Journal journal = new Journal();
+        Entry newEntry = new Entry();
+        newEntry.Display();
 
     // Welcome to the Journal Program!
     // Please select one of the following choices:
