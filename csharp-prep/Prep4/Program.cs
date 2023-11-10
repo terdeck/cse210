@@ -14,7 +14,7 @@ class Program
 
         while (numberInput != 0)
         {
-            Console.WriteLine("Enter number: ");
+            Console.Write("Enter number: ");
                 string userInput = Console.ReadLine();
                 numberInput = int.Parse(userInput);
 
@@ -33,7 +33,8 @@ class Program
 
         Console.WriteLine($"The sum is: {sum}");
 
-        float average = ((float)sum) / numbers.Count;
+        // float average = ((float)sum) / numbers.Count;
+        double average = ((double)sum) / numbers.Count;
         Console.WriteLine($"The average is: {average}");
 
         int largest = numbers[0];
