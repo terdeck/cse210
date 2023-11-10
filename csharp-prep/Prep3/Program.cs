@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         // Console.WriteLine("Hello Prep3 World!");
-        // Console.WriteLine("What is the magic number? ");
+        Console.WriteLine("What is the magic number? ");
         // string number = Console.ReadLine();
         // int magicNumber = int.Parse(number);
 
@@ -16,7 +16,7 @@ class Program
 
         while (guessInput != magicNumber)
         {
-            Console.WriteLine("What is your guess? ");
+            Console.Write("What is your guess? ");
             string guess = Console.ReadLine();
             guessInput = int.Parse(guess);
 
