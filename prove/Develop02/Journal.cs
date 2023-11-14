@@ -3,58 +3,58 @@ using System.IO;
 
 public class Journal
 {
-    // public List<Entry> _entries = new List<Entry>();
-    public List<Entry> _entries;
-    // public string _newEntry;
-    // public string _file;
+    public List<Entry> _entries = new();
 
-    public void AddEntry(Entry newEntry)
+    public void AddEntry()
     {
-        string input = Console.ReadLine();
-
-        Entry inputEntry = new Entry();
-        _entries.Add(inputEntry);
-        // newEntry.Display();
+        Entry entry = new();
+        entry.Write();
+        _entries.Add(entry);
+        Console.Clear();
     }
+
+
     public void DisplayAll()
     {
+        Console.Clear();
         foreach (Entry entry in _entries)
         {
-            Console.WriteLine("Date: {entry}");
             entry.Display();
         }
+        Console.WriteLine();
     }
+
+
     public void SaveToFile(string file)
     {
-        Console.WriteLine("What is the filename? ");
-        string input = Console.ReadLine();
-        using (StreamWriter outputFile = new StreamWriter(input))
+        using (StreamWriter outputFile = new(file, true))
         {
-            outputFile.WriteLine();
+            foreach(Entry entry in _entries)
+            {
+                outputFile.WriteLine($"{entry._date}|{entry._promptText}|{entry._entryText}");
+            }
         }
-        // file.Display();
-        // writing
+        _entries.Clear();
+        Console.Clear();
+        Console.Write($"File has been saved to {file}\n\n");
     }
+
+
     public void LoadFromFile(string file)
     {
-        Console.Write("What is the filename?");
-        string filename = Console.ReadLine();
-        string[] lines = File.ReadAllLines(filename);
+        string[] lines = File.ReadAllLines(file);
 
         foreach (string line in lines)
         {
             string[] parts = line.Split("|");
-
-            string date = parts[0];
-            string prompt = parts[1];
-            string entry = parts[2];
-
-            Display();
-            // date prompt entry
+            Entry entry = new();
+            entry._date = parts[0];
+            entry._promptText = parts[1];
+            entry._entryText = parts[2];
+            _entries.Add(entry);
         }
-        // parts.Display();
-        // Display(parts);
-        // reading
+        Console.Clear();
+        Console.Write($"File has been loaded from {file}\n\n");
     }
 
 }
