@@ -4,39 +4,38 @@ class Program
 {
     static void Main(string[] args)
     {
+        ScriptureConstructor scriptureConstructor = new();
+        Scripture scripture = scriptureConstructor.GetRandomScripture();
+
         Console.WriteLine("Welcome to the New Testament Scripture Mastery Memorizer program! \n");
         Console.WriteLine("The program will choose a random scripture from the 25 scripture mastery scriptures. \n");
         Console.WriteLine("Let's Begin! \n");
 
-        // calls random scripture
 
-        bool first = true;
-        
-        string choice = "quit";
-        while(choice != "quit")
+        string choice;
+        int counter;
+        while(true)
         {
+            Console.Clear();
+            scripture.DisplayScripture();
             
-            Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
+            Console.Write("\n\nPress enter to continue or type 'quit' to finish: ");
             choice = Console.ReadLine();
 
             if (choice == "quit") 
             {
                 break;
             }
-            Console.Clear();
-            if (first)
+            if (scripture.CompletelyHidden())
             {
-                Scripture.DisplayScripture();
-                first = false;
+                break;
             }
-            else
+            
+            counter = 0;
+            while(counter < 3 && !scripture.CompletelyHidden())
             {
-                if (Scripture.CompletelyHidden())
-                {
-                    break;
-                }
-                // Scripture.CompletelyHidden();
-                Scripture.HideWords();
+                scripture.HideWord();
+                counter++;
             }
 
             // user keeps pressing enter until whole scripture is hidden
@@ -45,7 +44,3 @@ class Program
 
     }
 }
-// ChooseScripture()
-// loop accepting user input
-    // if Enter is pressed continue
-    // type quit to exit program

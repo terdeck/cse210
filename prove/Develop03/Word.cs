@@ -5,27 +5,35 @@ using System.Reflection.PortableExecutable;
 public class Word
 {
 
-  private List<string> _text = new();
+  private string _text;     //Original text
+  private string _hidden;   //Hidden text
+  private bool _isHidden;   //Status of the word (whether or not it is hidden)
 
-  private string _hidden;
-  // _notHidden = bool
-  // _indexList = create a list of indexes and remove at random to hide words
-
-  // HideWords
-
-
-  public string BlankWords(string x)
+  public Word(string text)
   {
-  // BlankWords
-    // randomized function to select words to hide
-    // remove from _indexList
-    foreach (var item in x)
+    _text = text;
+    _isHidden = false;
+    foreach (char letter in text)
     {
-      _hidden.Add[item] = '_'; //??? add? not add?
+      _hidden += '_';
     }
-    return _hidden;
   }
   
-  // CompletelyHidden() return bool
-      // when count of hidden words == length of scripture
+  public string GetText()
+  {
+    if(_isHidden)
+      return _hidden;
+    else
+      return _text;
+  }
+
+  public bool GetIsHidden()
+  {
+    return _isHidden;
+  }
+
+  public void Hide()
+  {
+    _isHidden = true;
+  }
 }
