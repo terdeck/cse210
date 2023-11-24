@@ -3,56 +3,50 @@ using System.Diagnostics;
 public class Activity{
     protected string _name;
     protected string _description;
-    protected string _duration;
+    protected int _duration; // how long user wants to spend on each activity
 
-    public Activity(string name, string description, string duration)
+    public Activity()
     {
-        _name = name;
-        _description = description;
-        _duration = duration;
+        // _name = name;
+        // _description = description;
     }
-    public string GetName()
+    public void GetDuration()
     {
-        return _name;
-    }
-    public string GetDescription()
-    {
-        return _description;
-    }
-    public string GetDuration()
-    {
-        return _duration;
+        Console.Write("How long, in seconds, would you like for your session? ");
+        _duration = int.Parse(Console.ReadLine());
     }
     public void DisplayStartMessage()
     {
-        Console.WriteLine($"Welcome to the {_name}\n\n");
-        Console.WriteLine(_description);
+        Console.WriteLine($"Welcome to the {_name} Activity.\n\n");
+        Console.WriteLine($"{_description}\n\n");
     }
     public void DisplayEndMessage()
     {
-        Console.Write($"How long, in seconds, would you like for your session? ");
+        Console.WriteLine($"You have completed {_duration} seconds of the {_name} Activity");
+        Console.WriteLine("Well done!");
     }
-    public void ShowSpinner(int seconds)
+    public void ShowAnimation()
     {
         for (int i = 5; i > 0; i--)
         {
-            Console.Write(seconds);
+            Console.Write(".");
             Thread.Sleep(1000);
         }
-        
-        Console.Write("Done");
     }
-    public void ShowCountDown(int seconds)
+    public void ShowCountDown()
     {
-        DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(seconds);
+        // DateTime startTime = DateTime.Now;
+        // DateTime endTime = startTime.AddSeconds(_duration);
 
-        while (DateTime.Now < endTime)
+        // while (DateTime.Now < endTime)
         {
-            Console.Write(seconds);
-            Thread.Sleep(1000);
+            for (int n = _duration/3; n > 0; n--)
+            // Console.Write(endTime - DateTime.Now);
+            {
+                Console.Write(n);
+                Thread.Sleep(1000);
+                Console.Write("\b\b \b\b");
+            }   
         }
-
-        Console.Write("Done");
     }
 }

@@ -5,7 +5,6 @@ class Program
     static void Main(string[] args)
     {
         Console.Clear();
-        
         int choice = 0;
         while(choice != 4)
         {
@@ -20,19 +19,24 @@ class Program
 
             if (choice == 1)
             {
-
+                // don't list up top, call method inside choice
+                BreathingActivity act1 = new();
+                act1.RunBreathing();
             }
             else if (choice == 2)
             {
-
+                ReflectingActivity act2 = new();
+                act2.RunReflect();
             }
             else if (choice == 3)
             {
-
+                ListingActivity act3 = new();
+                act3.RunList();
             }
             else if (choice == 4)
             {
-
+                Console.Write("See you next time!");
+                return;
             }
             else
             {
