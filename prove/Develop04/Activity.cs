@@ -17,12 +17,13 @@ public class Activity{
     }
     public void DisplayStartMessage()
     {
-        Console.WriteLine($"Welcome to the {_name} Activity.\n\n");
-        Console.WriteLine($"{_description}\n\n");
+        Console.WriteLine($"Welcome to the {_name} Activity.\n");
+        Console.WriteLine($"{_description}\n");
     }
     public void DisplayEndMessage()
     {
-        Console.WriteLine($"You have completed {_duration} seconds of the {_name} Activity");
+        Console.WriteLine($"You have completed {_duration} seconds of the {_name} Activity. \n");
+        Thread.Sleep(1000);
         Console.WriteLine("Well done!");
     }
     public void ShowAnimation()

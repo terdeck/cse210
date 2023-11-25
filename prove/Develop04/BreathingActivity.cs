@@ -14,23 +14,29 @@ public class BreathingActivity : Activity
 
         while (DateTime.Now < endTime)
         {
-            Console.WriteLine("Breathe in... \n\n");
+            Console.WriteLine("\nBreathe in... \n");
             ShowCountDown();
             // Console.WriteLine();
-            Console.WriteLine("Breathe out...\n\n");
+            Console.WriteLine("Breathe out...\n");
             ShowCountDown();
             // Console.WriteLine();
         }
     }
     public void RunBreathing()
     {
+        Console.Clear();
         DisplayStartMessage();
         GetDuration();
+        Console.Clear();
         Console.WriteLine("Let's begin:");
         ShowAnimation();
+        Console.WriteLine();
+        
         BreathingExercise();
+        ShowAnimation();
         DisplayEndMessage();
         ShowAnimation();
+        Thread.Sleep(2000);
         Console.Clear();
     }
 }

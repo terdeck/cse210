@@ -52,14 +52,20 @@ public class ReflectingActivity : Activity
     // DisplayPrompt and DisplayQuestion can both be part of Run
         public void RunReflect()
     {   
+        Console.Clear();
         DisplayStartMessage();
         GetDuration();
 
-        Console.WriteLine("Get ready . . . \n\n");
-        Console.WriteLine("Consider the following prompt: \n\n");
-        Console.WriteLine($"--- {GetRandomReflectPrompt()} --- \n\n");
-        Console.WriteLine("When you have something in mind, press enter to continue. \n\n");
+        Console.Clear();
+        Console.WriteLine("Get ready . . .\n");
+        ShowAnimation();
+        Console.WriteLine("\n");
+        Console.WriteLine("Consider the following prompt: \n");
+        Console.WriteLine($"--- {GetRandomReflectPrompt()} --- \n");
+        Console.WriteLine("When you have something in mind, press enter to continue. \n");
+        Console.ReadKey(); // ReadKey() Method in C# Console. ReadKey() Method makes the program wait for a key press and it prevents the screen until a key is pressed. In short, it obtains the next character or any key pressed by the user. - geeksforgeeks
         Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
+        Thread.Sleep(3000);
         Console.Write($"You may begin in: ");
         ShowCountDown();
 

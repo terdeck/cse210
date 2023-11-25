@@ -29,7 +29,7 @@ public class ListingActivity : Activity
 
         while (DateTime.Now < futureTime)
         {
-            Console.WriteLine("> ");
+            Console.Write("> ");
             // Thread.Sleep(1000);
             Console.ReadLine();
             _count++;
@@ -41,24 +41,26 @@ public class ListingActivity : Activity
 
     public void RunList()
     {
+        Console.Clear();
         DisplayStartMessage();
         GetDuration();
 
         Console.Clear();
-        Console.WriteLine("Get ready . . . \n\n");
+        Console.WriteLine("Get ready . . .\n");
         ShowAnimation();
+        Console.WriteLine("\n");
         Console.WriteLine("List as many responses as you can to the following prompt: ");
-        Console.WriteLine($"--- {GetRandomList()} --- \n\n");
-        Console.Write($"You may begin in: ");
+        Console.WriteLine($"--- {GetRandomList()} --- \n");
+        Console.WriteLine($"You may begin in: ");
         ShowCountDown();
 
-        Console.Write($"> ");
         GetListCount();
-        Console.WriteLine($"You listed {_count} items! \n\n");
-        
-        Console.WriteLine("Well done!");
+        Console.WriteLine($"You listed {_count} items!");
         ShowAnimation();
+        Console.WriteLine("\n");
         DisplayEndMessage();
+        ShowAnimation();
+        Thread.Sleep(2000);
         Console.Clear();
     }
 }
