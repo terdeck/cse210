@@ -35,6 +35,7 @@ class Program
             }
             else if (choice == 4)
             {
+                Console.WriteLine();
                 Console.Write("See you next time!");
                 return;
             }

@@ -72,6 +72,7 @@ public class ReflectingActivity : Activity
         Console.Clear();
         ReflectExercise();
         ShowAnimation();
+        Console.WriteLine("\n");
         DisplayEndMessage();
         ShowAnimation();
         Thread.Sleep(2000);

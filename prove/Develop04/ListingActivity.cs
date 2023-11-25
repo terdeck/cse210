@@ -49,7 +49,7 @@ public class ListingActivity : Activity
         Console.WriteLine("Get ready . . .\n");
         ShowAnimation();
         Console.WriteLine("\n");
-        Console.WriteLine("List as many responses as you can to the following prompt: ");
+        Console.WriteLine("List as many responses as you can to the following prompt: \n");
         Console.WriteLine($"--- {GetRandomList()} --- \n");
         Console.WriteLine($"You may begin in: ");
         ShowCountDown();

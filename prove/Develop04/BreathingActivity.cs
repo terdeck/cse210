@@ -34,6 +34,7 @@ public class BreathingActivity : Activity
         
         BreathingExercise();
         ShowAnimation();
+        Console.WriteLine("\n");
         DisplayEndMessage();
         ShowAnimation();
         Thread.Sleep(2000);
