@@ -14,14 +14,14 @@ public  class GoalManager
     {
         // This is the "main" function for this class. It is called by Program.cs, and then runs the menu loop.
         Console.Clear();
-        Console.WriteLine($"You have {_score} points.");
-        // Goal goal = new();
-        // GoalManager gm = new();
+        // Console.WriteLine($"You have {_score} points.");
+        // Goal goal = new Goal();
+        GoalManager gm = new();
 
         int choice = 0;
         while(choice != 6)
         {
-            Console.WriteLine($"You have points. \n");
+            Console.WriteLine($"You have {_score} points. \n");
 
             Console.WriteLine("Menu Options:");
             Console.WriteLine("   1. Create New Goal");
@@ -38,23 +38,32 @@ public  class GoalManager
             {
                 // don't list up top, call method inside choice
                 // menu - simple, eternal, or checklist
-            
+                gm.ListGoalNames();
+                gm.CreateGoal();
             }
             else if (choice == 2)
             {
-                
+                Console.WriteLine("The goals are: ");
+                gm.ListGoalDetails();
             }
             else if (choice == 3)
             {
-                
+                Console.Write("What is the filename for the goal file? ");
+                string filename = Console.ReadLine();
+                gm.SaveGoals(filename);
             }
             else if (choice == 4)
             {
-        
+                Console.Write("What is the filename for the goal file? ");
+                string filename = Console.ReadLine();
+                gm.SaveGoals(filename);
             }
             else if (choice == 5)
             {
-        
+                Console.WriteLine("The goals are: ");
+                gm.ListGoalDetails();
+                Console.Write("Which goal did you accomplish? ");
+                gm.DisplayPlayerInfo();
             }
             else if (choice == 6)
             {
@@ -72,11 +81,20 @@ public  class GoalManager
     public void DisplayPlayerInfo()
     {
         // Displays the players current score.
+        Console.WriteLine($"Congratulations! You have earned {_score} points!");
     }
     public void ListGoalNames()
     {
         // Lists the names of each of the goals.
-        
+        Console.WriteLine("The types of Goals are:");
+        Console.WriteLine("   1. Simple Goal");
+        Console.WriteLine("   2. Eternal Goal");
+        Console.WriteLine("   3. Checklist Goal");
+        Console.Write("Which type of goal would you like to create? ");
+        int newGoal = 0;
+        newGoal = int.Parse(Console.ReadLine()); // ?? here instead?
+
+        // if else if loop for the three goal types??
     }
     public void ListGoalDetails()
     {
@@ -88,13 +106,13 @@ public  class GoalManager
         // Goal goal = new();
         // goal.Write();
 
-        Console.WriteLine("The types of Goals are:");
-        Console.WriteLine("   1. Simple Goal");
-        Console.WriteLine("   2. Eternal Goal");
-        Console.WriteLine("   3. Checklist Goal");
-        Console.Write("Which type of goal would you like to create? ");
-        int newGoal = 0;
-        newGoal = int.Parse(Console.ReadLine()); // ?? here instead?
+        // Console.WriteLine("The types of Goals are:");
+        // Console.WriteLine("   1. Simple Goal");
+        // Console.WriteLine("   2. Eternal Goal");
+        // Console.WriteLine("   3. Checklist Goal");
+        // Console.Write("Which type of goal would you like to create? ");
+        // int newGoal = 0;
+        // newGoal = int.Parse(Console.ReadLine()); // ?? here instead?
 
     }
     public void RecordEvent()
