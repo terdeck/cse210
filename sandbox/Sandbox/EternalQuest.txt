@@ -1,0 +1,47 @@
+classes: - goals, simple goals, eternal goals, checklist goals, optional GoalManager class
+    
+    goals - abstract base class, bare minimum, contain base private or protected variables, and abstract methods
+        * variables - goal name - string, goal description - string, points - int
+        * methods - RecordEvent - void (Abstract), IsComplete - bool (Abstract), GetDetailsString - string, GetStringRepresentation - string (abstract)
+    
+    simple - calls base class, private variables, override methods
+
+        * takes input from user/ name of goal, description of goal, how many points,
+        * methods - RecordEvent - void (override), IsComplete - bool (override), GetStringRepresentation - string (override)
+        * inherited variables - goal name, goal description, points
+        * class specific variables - isComplete - bool
+    
+    eternal - calls base class, override methods
+
+        * takes input from user/ name of goal, description of goal, how many points,
+        * methods - RecordEvent - void (override), IsComplete - bool (override), GetStringRepresentation - string (override)
+        * inherited variables - goal name, goal description, points
+        * class specific variables - doesn't have variables, can't be completed
+    
+    checklist - calls base class, private variables, override methods
+
+        * takes input from user/ name of goal, description of goal, how many points, how many times goal needs to be accomplished for bonus, completion bonus
+        * methods - RecordEvent - void (override), IsComplete - bool (override), GetStringRepresentation - string (override), GetDetailsString - string (override)
+        * inherited variables - goal name, goal description, points
+        * class specific variables - howMany - int, timesCompleted - int, bonusPoints - int
+    
+    goalmanager - menu functions, main program functionality
+        * start, save points, save file, load file, show scores / total score, record event, quit
+        * methods - Start, DisplayUserInfo, ListGoalNames, ListGoalDetails, CreateGoal, RecordEvent, SaveGoals, LoadGoals
+        * class specific variables - goals - List<Goal>, score - int
+
+
+
+
+main program - menu functionality for user
+    display score, create new goals, record an event, show list of goals (that show complete or not), allow user goals and current score to be saved and loaded
+
+goals - choose from the 3
+
+simple goals - small single items
+eternal goals - items that won't be checked off
+checklist goals - items that can be done repeatedly for intermittent or incremental rewards
+
+user input - goals, point system, checklist items, record events, file save name
+program output - list, point calculations, output rewards we set up, call user saved data, 
+program end - file ends with quit command

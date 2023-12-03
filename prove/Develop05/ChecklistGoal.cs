@@ -1,3 +1,4 @@
+using System.IO; 
 public  class ChecklistGoal : Goal
 {
     private int _amountCompleted;
@@ -8,13 +9,15 @@ public  class ChecklistGoal : Goal
     {
         // In addition to the standard attributes, a checklist goal also needs the target and the bonus amounts. Then, it should set the amount completed to begin at 0.
         
-        _goalName = ;
-        _description = ;
-        _points = ;
+        _goalName = "What is the name of your goal?";
+        _description = "What is a short description of it?";
+        _points = "What is the amount of points associated with this goal?";
 
-        _amountCompleted = 0;
-        _target = -1;
-        _bonus = -1;
+        Console.Write("How many many times must this goal be accomplished for a bonus?");
+        _target = int.Parse(Console.ReadLine());
+        Console.Write("What is the bonus for accomplishing it that many times?");
+        _bonus = int.Parse(Console.ReadLine());
+        _amountCompleted = -1;
     }
     public override void RecordEvent()
     {

@@ -1,12 +1,13 @@
+using System.IO; 
 public  class EternalGoal : Goal
 {
     // doesn't need member variables
 
     public EternalGoal() : base()
     {
-        _goalName = ;
-        _description = ;
-        _points = ;
+        _goalName = "What is the name of your goal?";
+        _description = "What is a short description of it?";
+        _points = "What is the amount of points associated with this goal?";
     }
     public override void RecordEvent()
     {
@@ -15,6 +16,8 @@ public  class EternalGoal : Goal
     public override bool IsComplete()
     {
         // This method should return true if the goal is completed. The way you determine if a goal is complete is different for each type of goal.
+        return false;
+
     }
     public override string GetStringRepresentation()
     {
