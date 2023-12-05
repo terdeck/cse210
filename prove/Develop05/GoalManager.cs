@@ -7,10 +7,11 @@ public  class GoalManager
     List<Goal> _goals = new List<Goal>();
     private int _score;
     private int _counter;
+    private int _input;
 
     public GoalManager()
     {
-        // Initializes and empty list of goals and sets the player's score to be 0.
+        // Initializes an empty list of goals and sets the player's score to be 0.
         _score = 0;
         _counter = 0;
         // GoalManager gm = new();
@@ -21,7 +22,7 @@ public  class GoalManager
         Console.Clear();
         // Console.WriteLine($"You have {_score} points.");
         // Goal goal = new Goal();
-        GoalManager gm = new();  //put this in GoalManager method??
+        // GoalManager gm = new();  //put this in GoalManager method??
 
         int choice = 0;
         while(choice != 4)
@@ -38,14 +39,18 @@ public  class GoalManager
             {
                 // don't list up top, call method inside choice
                 // call simple class
+                // _goals.Add(new SimpleGoal(goalName, description, points));
+                _goals.Add(new SimpleGoal());
             }
             else if (choice == 2)
             {
                 // call eternal goal class
+                _goals.Add(new EternalGoal());
             }
             else if (choice == 3)
             {
                 // call checklist class
+                _goals.Add(new ChecklistGoal());
             }
             else if (choice == 4)
             {
@@ -62,9 +67,10 @@ public  class GoalManager
     public void DisplayGoals()
     {
         _counter = 1;
-        foreach (Goal goals in _goals)
+        foreach (Goal goal in _goals)
         {
-            Console.WriteLine("_counter" + goals.DisplayGoal());
+            Console.Write(_counter);
+            goal.DisplayGoal();
             _counter++;
         }
     }
@@ -79,15 +85,15 @@ public  class GoalManager
         Console.WriteLine("The goals are:");
         DisplayGoals();
         Console.Write("Which goal did you accomplish?");
-        string input = Console.ReadLine();
+        _input = int.Parse(Console.ReadLine());
     
-        if (_goals[input].GetComplete()==true)
+        if (_goals[_input].GetComplete()==true)
         {
             Console.WriteLine("Goal is already completed");
         }
         else
         {
-            _score += _goals[input].RecordEvent();
+            _score += _goals[_input].RecordEvent();
         }
     }
     public void SaveGoals(string file)
@@ -95,13 +101,12 @@ public  class GoalManager
         // Saves the list of goals to a file.
         using (StreamWriter outputFile = new(file, true))
         {
-            outputFile.WriteLine("score|_score");
+            outputFile.WriteLine($"{_score}|{_score}");
             foreach(Goal goals in _goals)
             {
                 outputFile.WriteLine(goals.GetSaveString());
             }
         }
-        _goals.Clear();
         Console.Clear();
         Console.Write($"File has been saved to {file}\n\n");
     }
@@ -113,16 +118,25 @@ public  class GoalManager
         foreach (string line in lines)
         {
             string[] parts = line.Split("|");
-            Goal goals = new Goal();
-            goals._goalName = parts[0];
-            goals._description = parts[1];
-            goals._points = parts[2];
-            goals._amountCompleted = parts[3];
-            goals._target = parts[4];
-            goals._bonus = parts[5];
-            goals.Add(goals);
+            
+            if (int.Parse(parts[0]) == 1)
+            {
+                SimpleGoal simple = new SimpleGoal(line);  
+                _goals.Add(simple); 
+            }
+            else if (int.Parse(parts[0]) == 2)
+            {
+                EternalGoal eternal = new EternalGoal(line);
+                _goals.Add(eternal); 
+            }
+            else if (int.Parse(parts[0]) == 3)
+            {
+                ChecklistGoal checklist = new ChecklistGoal(line);
+                _goals.Add(checklist); 
+            }
         }
         Console.Clear();
         Console.Write($"File has been loaded from {file}\n\n");
+        DisplayGoals();
     }
 }

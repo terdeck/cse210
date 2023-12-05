@@ -6,13 +6,13 @@ class Program
     {
         Console.Clear();
         GoalManager gm = new ();
-        int _score = 0;
 
         int choice = 0;
         while(choice != 6)
         {
-            Console.WriteLine($"You have {_score} points. \n");
-
+            Console.WriteLine();
+            gm.DisplayPlayerInfo();
+            Console.WriteLine();
             Console.WriteLine("Menu Options:");
             Console.WriteLine("   1. Create New Goal");
             Console.WriteLine("   2. List Goals");
@@ -33,6 +33,7 @@ class Program
             {
                 Console.WriteLine("The goals are: ");
                 gm.DisplayGoals();
+                Console.WriteLine();
             }
             else if (choice == 3)
             {
