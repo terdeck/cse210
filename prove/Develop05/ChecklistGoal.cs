@@ -46,7 +46,6 @@ public  class ChecklistGoal : Goal
     public override string GetSaveString()
     {
         // This method should provide all of the details of a goal in a way that is easy to save to a file, and then load later.
-        // return "_type|_name|_description|_points|_complete|_amountCompleted|_target|_bonus";
         return ($"{_type}|{_goalName}|{_description}|{_points}|{_complete}|{_amountCompleted}|{_target}|{_bonus}");
     }
 }
