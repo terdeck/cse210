@@ -1,0 +1,48 @@
+Encapsulation w/ Online Ordering: (Perler art??)
+
+- product ordering system
+- produce packing labels, shipping labels, and compute final prices for billing
+
+classes - product, customer, address, order
+    product
+        * prodName - string
+        * prodID - int
+        * prodPrice - double
+        * prodQuantity - int (possibly also a double)
+
+        ProductPrice - multiply price * quantity
+
+    customer
+        * custName - string
+        * Address - calls address class
+
+        Region - returns if they live in US or International
+            - calls Address method ShippingDestination
+
+    address
+        * street - string
+        * city - string
+        * stateOrProvince - string
+        * country - string
+
+        ShippingDestination - in US or not
+        GetAddress - returns string w/ all fields in one string
+            - use the '\n' character where appropriate so it displays like an address should
+            (address \n city, state, \n)
+
+    order
+        * products - List
+        * customerAddress - string
+        * prices - double(decimals)
+
+        TotalCost - sum of prices of each product + shipping costs
+            - USA $5
+            - International $35
+        PackingLabel - name and product id of each product in order
+        ShippingLabel - name and address of customer
+    
+    program
+        create 2 orders, 2 - 3 products each
+        call methods to get packing label, shipping label, total price, and display results
+
+        no user input

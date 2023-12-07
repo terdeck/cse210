@@ -1,0 +1,68 @@
+Inheritance w/ Event Planning:
+
+- track events and produce marketing material for social media
+- events include:
+    - lectures - speaker and limited capacity
+    - receptions - rsvp or register before event
+    - outdoor - no attendee limit, track weather forecast
+
+classes - events, lectures, receptions, outdoor, address
+    events
+        * title - string
+        * description - string
+        * date - DateTime / int? string?
+        * time - DateTime / int? string?
+
+        StandardDetails - title, description, date, time, and address(class)
+        FullDetails - StandardDetails, event type, specific event info
+        ShortDescription - event type, title, date
+
+    lectures
+        * title - string
+        * description - string
+        * date - DateTime / int? string?
+        * time - DateTime / int? string?
+        * speakerName - string
+        * capacity - int
+
+        StandardDetails - title, description, date, time, and address(class)
+        FullDetails - StandardDetails, event type, specific event info
+            - speaker name, capacity
+        ShortDescription - event type, title, date
+    
+    receptions
+        * title - string
+        * description - string
+        * date - DateTime / int? string?
+        * time - DateTime / int? string?
+        * rsvp - string
+
+        StandardDetails - title, description, date, time, and address(class)
+        FullDetails - StandardDetails, event type, specific event info
+            - rspv/email
+        ShortDescription - event type, title, date
+    
+    outdoorEvents
+        * title - string
+        * description - string
+        * date - DateTime / int? string?
+        * time - DateTime / int? string?
+        * weather - string
+
+        StandardDetails - title, description, date, time, and address(class)
+        FullDetails - StandardDetails, event type, specific event info
+            - weather forecast
+        ShortDescription - event type, title, date
+
+    address
+        * street - string
+        * city - string
+        * stateOrProvince - string
+        * country - string
+
+        GetAddress - returns string w/ all fields in one string
+            - use the '\n' character where appropriate so it displays like an address should
+    
+    program
+        create 1 event of each type and sets all values
+        foreach - call each method to generate marketing messages and output results

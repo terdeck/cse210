@@ -1,0 +1,36 @@
+Abstraction w/ YouTube videos: (TS vids???)
+
+- product awareness monitoring tracking placement of products in YouTube videos
+- also want to track comments
+
+classes - video, comment
+    video
+        * vidTitle - string
+        * vidAuthor - string
+        * vidLength(seconds) - int
+        * vidComment - List
+
+        GetComment - store list of comments
+        SetComment - return number of comments
+        VidDetails - title, author, and length of video
+
+    comment
+        * name - string
+        * text - string
+
+        Comment - store commentor name and comment text
+    
+    program
+        create 3 - 4 videos ( Video v1 = new() )
+        set appropriate values
+        foreach - add list of 3 - 4 comments (w/ commentor name and text)
+        put vids in a List
+
+        iterate through list of videos
+            - title, author, length, number of comments(method), list out all comments
+            - repeat for each video
+
+        no user input
+
+
+        

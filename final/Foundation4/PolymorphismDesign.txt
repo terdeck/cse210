@@ -1,0 +1,88 @@
+Polymorphism w/ Exercise Tracking:
+
+- write app for customers to track their Exercise
+- facilities include:
+    - running
+    - stationary bike
+    - swimming
+- activity tracker: 
+    - date
+    - length of activity (mins)
+    - running - distance
+    - cycling - speed
+    - swimming - number of laps 
+- activity info:
+    - DON'T store info - 
+    - distance
+        - for swimming - single lap 50 meters
+    - speed (miles per hour)
+    - pace (minutes per mile)
+    - summary (example format)
+        - 03 Nov 2022 Running (30 min)- Distance 3.0 miles, Speed 6.0 mph, Pace: 10.0 min per mile
+        - 03 Nov 2022 Running (30 min): Distance 4.8 km, Speed: 9.7 kph, Pace: 6.9 min per km
+
+
+classes - activity, running, cycling, swimming
+    activity
+        * date - DateTime / int? string?
+        * activityLength - int (minutes)
+        * distance - double
+        * speed - double miles per hour
+        * pace - double minutes per mile
+
+        GetDistance - virtual
+        GetSpeed - virtual
+        GetPace - virtual
+        GetSummary - abstract? - activity summary
+
+    running
+        base - inherited
+        * date - DateTime / int? string?
+        * activityLength - int (minutes)
+        * distance - double
+        * speed - double miles per hour
+        * pace - double minutes per mile
+
+        GetDistance - virtual
+        GetSpeed - virtual
+        GetPace - virtual
+        GetSummary - abstract? - activity summary
+    
+    cycling 
+        base - inherited
+        * date - DateTime / int? string?
+        * activityLength - int (minutes)
+        * distance - double
+        * speed - double miles per hour
+        * pace - double minutes per mile
+
+        GetDistance - virtual
+        GetSpeed - virtual
+        GetPace - virtual
+        GetSummary - abstract? - activity summary
+
+    swimming
+        base - inherited
+        * date - DateTime / int? string?
+        * activityLength - int (minutes)
+        * distance - double
+        * speed - double miles per hour
+        * pace - double minutes per mile
+
+        swimming specific
+        * laps - int
+
+        GetDistance - virtual
+        GetSpeed - virtual
+        GetPace - virtual
+        GetSummary - abstract? - activity summary
+
+    program
+        1 activity of each type
+        put each activity in a single List
+        foreach - go through activity List and call GetSummary method on each item
+        display results
+
+        double vs float 
+        double 15 decimal places
+        float 7 decimal places
