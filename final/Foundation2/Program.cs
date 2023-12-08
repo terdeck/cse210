@@ -44,10 +44,10 @@ class Program
         // p6.ProductOrder();
         // p6.ProductPrice();
         
-        Order o1 = new(0, p1, c1);
-        o1.PackingLabel();
-        o1.ShippingLabel();
-        o1.PackingLabel().Add(p2); // ???
+        // Order o1 = new(0, p1, c1);
+        // o1.PackingLabel();
+        // o1.ShippingLabel();
+        // o1.PackingLabel().Add(p2); // ???
         // public Order(double prices, Product product, Customer customer)
         // Order o2 = new();
 

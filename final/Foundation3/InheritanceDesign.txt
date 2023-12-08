@@ -10,22 +10,24 @@ classes - events, lectures, receptions, outdoor, address
     events
         * title - string
         * description - string
-        * date - DateTime / int? string?
-        * time - DateTime / int? string?
+        * date - string
+        * time - string
 
         StandardDetails - title, description, date, time, and address(class)
-        FullDetails - StandardDetails, event type, specific event info
-        ShortDescription - event type, title, date
 
     lectures
         * title - string
         * description - string
         * date - DateTime / int? string?
         * time - DateTime / int? string?
+
         * speakerName - string
         * capacity - int
 
         StandardDetails - title, description, date, time, and address(class)
+
+        GetLecture -
+        SetLecture - 
         FullDetails - StandardDetails, event type, specific event info
             - speaker name, capacity
         ShortDescription - event type, title, date
@@ -35,9 +37,13 @@ classes - events, lectures, receptions, outdoor, address
         * description - string
         * date - DateTime / int? string?
         * time - DateTime / int? string?
+
         * rsvp - string
 
         StandardDetails - title, description, date, time, and address(class)
+
+        GetReception -
+        SetReception -
         FullDetails - StandardDetails, event type, specific event info
             - rspv/email
         ShortDescription - event type, title, date
@@ -47,9 +53,13 @@ classes - events, lectures, receptions, outdoor, address
         * description - string
         * date - DateTime / int? string?
         * time - DateTime / int? string?
+
         * weather - string
 
         StandardDetails - title, description, date, time, and address(class)
+
+        GetOutdoor -
+        SetOutdoor -
         FullDetails - StandardDetails, event type, specific event info
             - weather forecast
         ShortDescription - event type, title, date
@@ -57,7 +67,7 @@ classes - events, lectures, receptions, outdoor, address
     address
         * street - string
         * city - string
-        * stateOrProvince - string
+        * state - string
         * country - string
 
         GetAddress - returns string w/ all fields in one string
