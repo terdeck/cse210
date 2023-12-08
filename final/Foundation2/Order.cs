@@ -1,41 +1,47 @@
 public class Order
 {
     private List<Product> _products = new();
-    // private Address _customerAddress;
-    private Customer _live;
-    // private Product _shipCost;
-    private double _prices;
+    private Customer _customer;
 
     public Order(Customer customer)
     {
-        // _shipCost = product;
-        _live = customer;
+        _customer = customer;
+        _products = new List<Product>();
     }
-    // public double GetPrices()
-    // {
-    //     return _prices;
-    // }
-    // public void SetPrices(double prices)
-    // {
-    //     _prices = prices;
-    // }
+    public void AddProduct(Product product)
+    {
+        _products.Add(product);
+    }
     public double TotalCost()
     {
+        double _prices = 0;
         foreach (Product product in _products)
         {
             _prices += product.ProductPrice(); 
         }
-        return _live.Region() + _prices;
+
+        if (_customer.Region())
+        {
+            _prices += 5.0;
+        }
+        else
+        {
+            _prices += 35.0;
+        }
+        
+        return _prices;
     }
-    public void PackingLabel()
+    public string PackingLabel()
     {
+        string _packingLabel = "";
         foreach (Product product in _products)
         {
-            product.ProductOrder();
+            _packingLabel += $"Product: {product.GetProdName()} \nProduct Number: {product.GetProdID}";
         }
+        return _packingLabel;
     }
     public string ShippingLabel()
     {
-        return _live.Address();
+        return _customer.Address();
     }
-} // Address called by customer called by order
+} // Address called by customer, customer called by order

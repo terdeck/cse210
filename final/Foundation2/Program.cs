@@ -12,8 +12,8 @@ class Program
 
         Customer cust2 = new("Pepe Le Pew", add2);
 
-        List <Product> prod1 = new();
-        List <Product> prod2 = new();
+        // List <Product> prod1 = new();
+        // List <Product> prod2 = new();
 
         Product p1 = new();
         p1.SetProdName("Sandals");
@@ -24,79 +24,65 @@ class Program
         p1.ProductPrice();
 
         Product p2 = new();
-        p1.SetProdName("Hat");
-        p1.SetProdID(22223);
-        p1.SetProdPrice(12.9);
-        p1.SetProdQuantity(1);
+        p2.SetProdName("Hat");
+        p2.SetProdID(22223);
+        p2.SetProdPrice(12.9);
+        p2.SetProdQuantity(1);
         p2.ProductOrder();
         p2.ProductPrice();
 
         Product p3 = new();
-        p1.SetProdName("Necklace");
-        p1.SetProdID(11984);
-        p1.SetProdPrice(12.55);
-        p1.SetProdQuantity(1);
+        p3.SetProdName("Necklace");
+        p3.SetProdID(11984);
+        p3.SetProdPrice(12.55);
+        p3.SetProdQuantity(1);
         p3.ProductOrder();
         p3.ProductPrice();
 
         Product p4 = new();
-        p1.SetProdName("Perfume");
-        p1.SetProdID(22334);
-        p1.SetProdPrice(15.68);
-        p1.SetProdQuantity(1);
+        p4.SetProdName("Perfume");
+        p4.SetProdID(22334);
+        p4.SetProdPrice(15.68);
+        p4.SetProdQuantity(1);
         p4.ProductOrder();
         p4.ProductPrice();
 
         Product p5 = new();
-        p1.SetProdName("Flower Bouquet");
-        p1.SetProdID(33221);
-        p1.SetProdPrice(15.99);
-        p1.SetProdQuantity(1);
+        p5.SetProdName("Flower Bouquet");
+        p5.SetProdID(33221);
+        p5.SetProdPrice(15.99);
+        p5.SetProdQuantity(1);
         p5.ProductOrder();
         p5.ProductPrice();
 
         Product p6 = new();
-        p1.SetProdName("Assorted Chocolates");
-        p1.SetProdID(00221);
-        p1.SetProdPrice(9.50);
-        p1.SetProdQuantity(1);
+        p6.SetProdName("Assorted Chocolates");
+        p6.SetProdID(00221);
+        p6.SetProdPrice(9.50);
+        p6.SetProdQuantity(1);
         p6.ProductOrder();
         p6.ProductPrice();
-
-        prod1.Add(p1);
-        prod1.Add(p2);
-        prod1.Add(p3);
-
-        prod2.Add(p4);
-        prod2.Add(p5);
-        prod2.Add(p6);
         
         Order o1 = new(cust1);
-        o1.PackingLabel();
-        o1.ShippingLabel();
-        o1.TotalCost(); 
+        o1.AddProduct(p1);
+        o1.AddProduct(p2);
+        o1.AddProduct(p3);
 
-        foreach (Product product1 in prod1)
-        {
-            product1.ProductOrder();
-        }
-        Console.WriteLine(o1.PackingLabel());
-        Console.WriteLine(o1.ShippingLabel());
-        Console.WriteLine(o1.TotalCost());
-
+        Console.WriteLine();
+        Console.WriteLine($"   Order Details:   ");
+        Console.WriteLine($"Packing Label: \n{o1.PackingLabel()}");
+        Console.WriteLine($"Shipping Label: \n{o1.ShippingLabel()}");
+        Console.WriteLine($"Total Price: ${o1.TotalCost()}");
 
         Order o2 = new(cust2);
-        o2.PackingLabel();
-        o2.ShippingLabel();
-        o2.TotalCost(); 
+        o2.AddProduct(p4);
+        o2.AddProduct(p5);
+        o2.AddProduct(p6);
 
-        foreach (Product product2 in prod2)
-        {
-            product2.ProductOrder();
-        }
-
-        Console.WriteLine(o2.PackingLabel());
-        Console.WriteLine(o2.ShippingLabel());
-        Console.WriteLine(o2.TotalCost());
+        Console.WriteLine("\n");
+        Console.WriteLine($"   Order Details:   ");
+        Console.WriteLine($"Packing Label: \n{o2.PackingLabel()}");
+        Console.WriteLine($"Shipping Label: \n{o2.ShippingLabel()}");
+        Console.WriteLine($"Total Price: ${o2.TotalCost()}");
     }
 }
