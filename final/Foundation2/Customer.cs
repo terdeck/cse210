@@ -14,7 +14,7 @@ public class Customer
     }
     public string Address()
     {
-        return _shipping.GetAddress();
+        return $"{_custName} \n{_shipping.GetAddress()}";
 
     }
 }
