@@ -76,14 +76,13 @@ class Program
         o1.ShippingLabel();
         o1.TotalCost(); 
 
-        foreach (Product p1 in prod1)
+        foreach (Product product1 in prod1)
         {
-            
-            
-            Console.WriteLine(o1.TotalCost());
-            Console.WriteLine(o1.ShippingLabel());
-            Console.WriteLine(o1.TotalCost());
+            product1.ProductOrder();
         }
+        Console.WriteLine(o1.PackingLabel());
+        Console.WriteLine(o1.ShippingLabel());
+        Console.WriteLine(o1.TotalCost());
 
 
         Order o2 = new(cust2);
@@ -91,8 +90,13 @@ class Program
         o2.ShippingLabel();
         o2.TotalCost(); 
 
-        Console.WriteLine(o1.TotalCost());
-        Console.WriteLine(o1.ShippingLabel());
-        Console.WriteLine(o1.TotalCost());
+        foreach (Product product2 in prod2)
+        {
+            product2.ProductOrder();
+        }
+
+        Console.WriteLine(o2.PackingLabel());
+        Console.WriteLine(o2.ShippingLabel());
+        Console.WriteLine(o2.TotalCost());
     }
 }
