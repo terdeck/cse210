@@ -18,7 +18,7 @@ class Program
         Product p1 = new();
         p1.SetProdName("Sandals");
         p1.SetProdID(44422);
-        p1.SetProdPrice(14.99);
+        p1.SetProdPrice(15.68);
         p1.SetProdQuantity(2);
         p1.ProductOrder();
         p1.ProductPrice();
@@ -26,7 +26,7 @@ class Program
         Product p2 = new();
         p2.SetProdName("Hat");
         p2.SetProdID(22223);
-        p2.SetProdPrice(12.9);
+        p2.SetProdPrice(15.99);
         p2.SetProdQuantity(1);
         p2.ProductOrder();
         p2.ProductPrice();
@@ -34,7 +34,7 @@ class Program
         Product p3 = new();
         p3.SetProdName("Necklace");
         p3.SetProdID(11984);
-        p3.SetProdPrice(12.55);
+        p3.SetProdPrice(9.50);
         p3.SetProdQuantity(1);
         p3.ProductOrder();
         p3.ProductPrice();
@@ -70,8 +70,10 @@ class Program
 
         Console.WriteLine();
         Console.WriteLine($"   Order Details:   ");
+        Console.WriteLine();
         Console.WriteLine($"Packing Label: \n{o1.PackingLabel()}");
         Console.WriteLine($"Shipping Label: \n{o1.ShippingLabel()}");
+        Console.WriteLine();
         Console.WriteLine($"Total Price: ${o1.TotalCost()}");
 
         Order o2 = new(cust2);
@@ -81,8 +83,10 @@ class Program
 
         Console.WriteLine("\n");
         Console.WriteLine($"   Order Details:   ");
+        Console.WriteLine();
         Console.WriteLine($"Packing Label: \n{o2.PackingLabel()}");
         Console.WriteLine($"Shipping Label: \n{o2.ShippingLabel()}");
+        Console.WriteLine();
         Console.WriteLine($"Total Price: ${o2.TotalCost()}");
     }
 }

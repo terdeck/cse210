@@ -28,7 +28,7 @@ public class Order
         {
             _prices += 35.0;
         }
-        
+
         return _prices;
     }
     public string PackingLabel()
@@ -36,7 +36,7 @@ public class Order
         string _packingLabel = "";
         foreach (Product product in _products)
         {
-            _packingLabel += $"Product: {product.GetProdName()} \nProduct Number: {product.GetProdID}";
+            _packingLabel += $"Product: {product.GetProdName()}    Product Number: {product.GetProdID()}\n";
         }
         return _packingLabel;
     }
