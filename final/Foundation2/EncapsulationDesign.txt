@@ -7,8 +7,8 @@ classes - product, customer, address, order
     product
         * prodName - string
         * prodID - int
-        * prodPrice - double
-        * prodQuantity - int (possibly also a double)
+        * prodPrice - float
+        * prodQuantity - float?
 
         ProductPrice - multiply price * quantity
 
@@ -28,12 +28,11 @@ classes - product, customer, address, order
         ShippingDestination - in US or not
         GetAddress - returns string w/ all fields in one string
             - use the '\n' character where appropriate so it displays like an address should
-            (address \n city, state, \n)
 
     order
         * products - List
         * customerAddress - string
-        * prices - double(decimals)
+        * prices - float
 
         TotalCost - sum of prices of each product + shipping costs
             - USA $5
