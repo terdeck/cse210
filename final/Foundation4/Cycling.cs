@@ -19,6 +19,6 @@ public class Cycling : Activity
     public override void GetSummary()
     {
         // 03 Nov 2022 Running (30 min)- Distance 3.0 miles, Speed 6.0 mph, Pace: 10.0 min per mile
-        Console.WriteLine($"{_date} Cycling ({_activityLength}) - Distance {_distance} miles, Speed {_speed}, Pace: {_pace} min per mile");
+        Console.WriteLine($"{_date} Cycling ({_activityLength} mins) - Distance {_distance} miles, Speed {_speed}, Pace: {_pace} min per mile");
     }
 }
