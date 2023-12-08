@@ -24,16 +24,16 @@ Polymorphism w/ Exercise Tracking:
 
 classes - activity, running, cycling, swimming
     activity
-        * date - DateTime / int? string?
-        * activityLength - int (minutes)
+        * date - string
+        * activityLength - float (minutes)
         * distance - double
         * speed - double miles per hour
         * pace - double minutes per mile
 
-        GetDistance - virtual
-        GetSpeed - virtual
-        GetPace - virtual
-        GetSummary - abstract? - activity summary
+        ActDistance - double - abstract
+        ActSpeed - float - abstract
+        ActPace - float - abstract
+        GetSummary - string - abstract - activity summary
 
     running
         base - inherited
@@ -43,10 +43,10 @@ classes - activity, running, cycling, swimming
         * speed - double miles per hour
         * pace - double minutes per mile
 
-        GetDistance - virtual
-        GetSpeed - virtual
-        GetPace - virtual
-        GetSummary - abstract? - activity summary
+        ActDistance - double - abstract
+        ActSpeed - float - abstract
+        ActPace - float - abstract
+        GetSummary - string - abstract - activity summary
     
     cycling 
         base - inherited
@@ -56,10 +56,10 @@ classes - activity, running, cycling, swimming
         * speed - double miles per hour
         * pace - double minutes per mile
 
-        GetDistance - virtual
-        GetSpeed - virtual
-        GetPace - virtual
-        GetSummary - abstract? - activity summary
+        ActDistance - double - abstract
+        ActSpeed - float - abstract
+        ActPace - float - abstract
+        GetSummary - string - abstract - activity summary
 
     swimming
         base - inherited
@@ -72,10 +72,10 @@ classes - activity, running, cycling, swimming
         swimming specific
         * laps - int
 
-        GetDistance - virtual
-        GetSpeed - virtual
-        GetPace - virtual
-        GetSummary - abstract? - activity summary
+        ActDistance - double - abstract
+        ActSpeed - float - abstract
+        ActPace - float - abstract
+        GetSummary - string - abstract - activity summary
 
     program
         1 activity of each type
