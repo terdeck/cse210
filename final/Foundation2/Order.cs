@@ -6,11 +6,18 @@ public class Order
     private Product _price;
     private double _prices;
 
-    public Order(double prices, Product product, Customer customer)
+    public Order(Product product, Customer customer)
     {
-        _prices = 0;
         _price = product;
         _live = customer;
+    }
+    public double GetPrices()
+    {
+        return _prices;
+    }
+    public void SetPrices()
+    {
+        _prices = prices;
     }
     public double TotalCost()
     {
