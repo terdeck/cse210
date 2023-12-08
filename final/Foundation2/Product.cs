@@ -5,11 +5,36 @@ public class Product
     private double _prodPrice;
     private double _prodQuantity;
 
-    public Product(string prodName, int prodID, double prodPrice, double prodQuantity)
+    public string GetProdName()
+    {
+        return _prodName;
+    }
+    public void SetProdName(string prodName)
     {
         _prodName = prodName;
+    }
+    public int GetProdID()
+    {
+        return _prodID;
+    }
+    public void SetProdID(int prodID)
+    {
         _prodID = prodID;
+    }
+    public double GetProdPrice()
+    {
+        return _prodPrice;
+    }
+    public void SetProdPrice(double prodPrice)
+    {
         _prodPrice = prodPrice;
+    }
+    public double GetProdQuantity()
+    {
+        return _prodQuantity;
+    }
+    public void SetProdQuantity(double prodQuantity)
+    {
         _prodQuantity = prodQuantity;
     }
     public double ProductPrice()

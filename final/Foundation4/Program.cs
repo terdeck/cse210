@@ -21,6 +21,7 @@ class Program
 
         foreach (Activity a in act)
         {
+            Console.WriteLine();
             a.GetSummary();
         }
     }

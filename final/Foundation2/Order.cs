@@ -3,22 +3,22 @@ public class Order
     private List<Product> _products = new();
     // private Address _customerAddress;
     private Customer _live;
-    private Product _price;
+    // private Product _shipCost;
     private double _prices;
 
-    public Order(Product product, Customer customer)
+    public Order(Customer customer)
     {
-        _price = product;
+        // _shipCost = product;
         _live = customer;
     }
-    public double GetPrices()
-    {
-        return _prices;
-    }
-    public void SetPrices()
-    {
-        _prices = prices;
-    }
+    // public double GetPrices()
+    // {
+    //     return _prices;
+    // }
+    // public void SetPrices(double prices)
+    // {
+    //     _prices = prices;
+    // }
     public double TotalCost()
     {
         foreach (Product product in _products)
