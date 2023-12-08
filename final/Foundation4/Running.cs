@@ -16,9 +16,9 @@ public class Running : Activity
     {
         return _activityLength / _distance;
     }
-    public override string GetSummary()
+    public override void GetSummary()
     {
         // 03 Nov 2022 Running (30 min)- Distance 3.0 miles, Speed 6.0 mph, Pace: 10.0 min per mile
-        return $"{_date} Running ({_activityLength}) - Distance {_distance} miles, Speed {_speed}, Pace: {_pace} min per mile";
+        Console.WriteLine($"{_date} Running ({_activityLength}) - Distance {_distance} miles, Speed {_speed}, Pace: {_pace} min per mile");
     }
 }

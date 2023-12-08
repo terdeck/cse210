@@ -59,5 +59,5 @@ public abstract class Activity
     public abstract double ActDistance();
     public abstract float ActSpeed();
     public abstract float ActPace();
-    public abstract string GetSummary();
+    public abstract void GetSummary();
 }

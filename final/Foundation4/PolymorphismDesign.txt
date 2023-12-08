@@ -33,11 +33,11 @@ classes - activity, running, cycling, swimming
         ActDistance - double - abstract
         ActSpeed - float - abstract
         ActPace - float - abstract
-        GetSummary - string - abstract - activity summary
+        GetSummary - void - abstract - activity summary
 
     running
         base - inherited
-        * date - DateTime / int? string?
+        * date - string
         * activityLength - int (minutes)
         * distance - double
         * speed - double miles per hour
@@ -46,11 +46,11 @@ classes - activity, running, cycling, swimming
         ActDistance - double - abstract
         ActSpeed - float - abstract
         ActPace - float - abstract
-        GetSummary - string - abstract - activity summary
+        GetSummary - void - abstract - activity summary
     
     cycling 
         base - inherited
-        * date - DateTime / int? string?
+        * date - string
         * activityLength - int (minutes)
         * distance - double
         * speed - double miles per hour
@@ -59,11 +59,11 @@ classes - activity, running, cycling, swimming
         ActDistance - double - abstract
         ActSpeed - float - abstract
         ActPace - float - abstract
-        GetSummary - string - abstract - activity summary
+        GetSummary - void - abstract - activity summary
 
     swimming
         base - inherited
-        * date - DateTime / int? string?
+        * date - string
         * activityLength - int (minutes)
         * distance - double
         * speed - double miles per hour
@@ -75,7 +75,7 @@ classes - activity, running, cycling, swimming
         ActDistance - double - abstract
         ActSpeed - float - abstract
         ActPace - float - abstract
-        GetSummary - string - abstract - activity summary
+        GetSummary - void - abstract - activity summary
 
     program
         1 activity of each type

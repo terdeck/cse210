@@ -19,14 +19,9 @@ class Program
         act.Add(bike);
         act.Add(swim);
 
-        foreach (Activity activities in act)
+        foreach (Activity a in act)
         {
-
-
-            // string color = s.GetColor();
-            // double area = s.GetArea();
-
-            // Console.WriteLine($"The {color} shape has an area of {area}");
+            a.GetSummary();
         }
     }
 }
