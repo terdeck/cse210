@@ -21,7 +21,7 @@ public class Swimming : Activity
     }
     public override double ActSpeed()
     {
-        _speed = (_distance / _activityLength) * 60;
+        _speed = _distance / _activityLength * 60;
         return _speed;
     }
     public override double ActPace()
