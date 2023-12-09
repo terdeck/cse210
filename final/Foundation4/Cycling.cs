@@ -1,6 +1,6 @@
 public class Cycling : Activity
 {
-    public Cycling(string date, float activityLength, float distance, float speed, float pace) : base(date, activityLength, distance, speed, pace)
+    public Cycling() : base()
     {
 
     }
@@ -8,13 +8,15 @@ public class Cycling : Activity
     {
         return _distance;
     }
-    public override float ActSpeed()
+    public override double ActSpeed()
     {
-        return ((_distance / _activityLength) * 60);
+        _speed = (_distance / _activityLength) * 60;
+        return _speed;
     }
-    public override float ActPace()
+    public override double ActPace()
     {
-        return _activityLength / _distance;
+        _pace = _activityLength / _distance;
+        return _pace;
     }
     public override void GetSummary()
     {

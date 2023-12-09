@@ -1,18 +1,18 @@
 public abstract class Activity
 {
     protected string _date;
-    protected float _activityLength; // in mins
-    protected float _distance;
-    protected float _speed; // mph
-    protected float _pace; // mile per min
+    protected double _activityLength; // in mins
+    protected double _distance;
+    protected double _speed; // mph
+    protected double _pace; // mile per min
 
-    public Activity(string date, float activityLength, float distance, float speed, float pace)
+    public Activity()
     {
-        _date = date;
-        _activityLength = activityLength;
-        _distance = distance;
-        _speed = speed;
-        _pace = pace;
+        // _date = date;
+        // _activityLength = activityLength;
+        // _distance = distance;
+        // _speed = speed;
+        // _pace = pace;
     }
     public string GetDate()
     {
@@ -22,11 +22,11 @@ public abstract class Activity
     {
         _date = date;
     }
-    public float GetActLength()
+    public double GetActLength()
     {
         return _activityLength;
     }
-    public void SetActLength(float activityLength)
+    public void SetActLength(double activityLength)
     {
         _activityLength = activityLength;
     }
@@ -34,30 +34,32 @@ public abstract class Activity
     {
         return _distance;
     }
-    public void SetDistance(float distance)
+    public void SetDistance(double distance)
     {
         _distance = distance;
     }
-    public float GetSpeed()
+    public double GetSpeed()
     {
+        _speed = (_distance / _activityLength) * 60;
         return _speed;
     }
-    public void SetSpeed(float speed)
+    public void SetSpeed(double speed)
     {
         _speed = 60 / _pace;
         _speed = speed;
     }
-    public float GetPace()
+    public double GetPace()
     {
+        _pace = _activityLength / _distance;
         return _pace;
     }
-    public void SetPace(float pace)
+    public void SetPace(double pace)
     {
         _pace = 60 / _speed;
         _pace = pace;
     }
     public abstract double ActDistance();
-    public abstract float ActSpeed();
-    public abstract float ActPace();
+    public abstract double ActSpeed();
+    public abstract double ActPace();
     public abstract void GetSummary();
 }

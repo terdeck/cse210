@@ -2,21 +2,32 @@ public class Swimming : Activity
 {
     private double _laps;
 
-    public Swimming(string date, float activityLength, float distance, float speed, float pace, double laps) : base(date, activityLength, distance, speed, pace)
+    public Swimming() : base()
+    {
+        // _laps = laps;
+    }
+    public double GetLaps()
+    {
+        return _laps;
+    }
+    public void SetLaps(double laps)
     {
         _laps = laps;
     }
     public override double ActDistance()
     {
-        return (_laps * 50 / 1000 * 0.62);
+        _distance = _laps * 50 / 1000 * 0.62;
+        return _distance;
     }
-    public override float ActSpeed()
+    public override double ActSpeed()
     {
-        return (_distance / _activityLength) * 60;
+        _speed = (_distance / _activityLength) * 60;
+        return _speed;
     }
-    public override float ActPace()
+    public override double ActPace()
     {
-        return _activityLength / _distance;
+        _pace = _activityLength / _distance;
+        return _pace;
     }
     public override void GetSummary()
     {
